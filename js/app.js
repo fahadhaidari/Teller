@@ -3,10 +3,12 @@ var storyIndex = 0;
 var storyWordIndex = 0;
 var words = "";
 var storyBoard = undefined;
+var pageIndexDom = undefined;
 
 window.onload = function() {
   console.log("Teller is loaded");
   storyBoard = Utility.getDOM("storyBoard");
+  pageIndexDom = Utility.getDOM("pageIndex");
   Story.createStories(); // adding each story to the main story-list
   timer = setInterval(update, UPDATE_DELAY);
 }
@@ -24,6 +26,7 @@ function updateUI() {
   // storyBoard.innerHTML += Story.stories[storyIndex][storyWordIndex]; // this is deffintely faster
   // because it does access the data directly without calling a function
   Utility.HTML(storyBoard, words);
+  Utility.HTML(pageIndexDom, storyIndex + 1 + ":" + Story.getNumberOfStories());
 }
 
 // remove everything from the storyBoard
