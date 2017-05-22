@@ -1,0 +1,28 @@
+html, body {
+  background: #EEEEEE;
+  width: 100%;
+  height: 100%;
+  font-size: 100%;
+  margin: 0px;
+  font-family: Courier;
+}
+
+.container {
+  margin: 0px auto;
+  width: 100%;
+  height: 100%;
+  font-size: 100%;
+}
+
+#storyBoard {
+  margin: 10px auto;
+  font-size: 3rem;
+  font-size: 3vw;
+  width: 70%;
+  height: 90%;
+  background: #FFFFFF;
+  border: solid 2px #DDDDDD;
+  color: 222222;
+  overflow: auto;
+  padding: 2%;
+}
