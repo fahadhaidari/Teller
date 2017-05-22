@@ -13,7 +13,7 @@ window.onload = function () {
 }
 
 function update () {
-  if(!Story.isStoriesEnded(storyIndex)) {
+  if(!Story.areStoriesEnded(storyIndex)) {
     updateUI();
     storyWordIndex ++;
     if(Story.isStoryEnded(storyIndex, storyWordIndex)) {
@@ -26,8 +26,8 @@ function update () {
 }
 
 function updateUI () {
-  words = Story.getCurrentWordFromStory(storyIndex, storyWordIndex);
+  words += Story.getCurrentWordFromStory(storyIndex, storyWordIndex);
   // storyBoard.innerHTML += Story.stories[storyIndex][storyWordIndex]; // this is deffintely faster
   // because it does access the data directly without calling a function
-  Utility.HTML(storyBoard, Story.stories[storyIndex][storyWordIndex]);
+  Utility.HTML(storyBoard, words);
 }

@@ -5,7 +5,7 @@ const Utility = {
   },
 
   HTML : function (_DOM, _content) {
-    _DOM.innerHTML += _content;
+    _DOM.innerHTML = _content;
   }
 
 }

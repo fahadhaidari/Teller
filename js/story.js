@@ -1,8 +1,8 @@
 const Story = {
 
   story1: "Hi there, this is the first story I want to talk about...",
-  story2: "Hi there, this is the first story I want to talk about...",
-  story3: "Hi there, this is the first story I want to talk about...",
+  story2: "Hi there, this is the second story I want to talk about...",
+  story3: "Hi there, this is the third story I want to talk about...",
   stories: [],
 
   createStories : function () {
@@ -17,7 +17,7 @@ const Story = {
     return _wordIndex >= this.stories[_storyIndex].length;
   },
 
-  isStoriesEnded : function (_storyIndex) {
+  areStoriesEnded : function (_storyIndex) {
     return _storyIndex >= this.stories.length;
   },
 
