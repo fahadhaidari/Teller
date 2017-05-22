@@ -9,6 +9,7 @@ window.onload = function() {
   console.log("Teller is loaded");
   storyBoard = Utility.getDOM("storyBoard");
   pageIndexDom = Utility.getDOM("pageIndex");
+  $(storyBoard).fadeOut("fast").fadeIn("fast");
   Story.createStories(); // adding each story to the main story-list
   timer = setInterval(update, UPDATE_DELAY);
 }
@@ -34,8 +35,8 @@ function clearUI() {
   words = "";
 }
 
-$(document).click(function() {
-  clearUI();
+function addNewStory() {
+
   storyWordIndex = 0;
   if (!Story.areStoriesEnded(storyIndex + 1)) {
     storyIndex++;
@@ -44,5 +45,10 @@ $(document).click(function() {
   }
   // or you can use the below code, but '%' needs extra performance
   // storyIndex = (storyIndex + 1) % (Story.getNumberOfStories());
+}
 
+$(document).click(function() {
+  clearUI();
+  $(storyBoard).fadeOut("fast").fadeIn("slow");
+  addNewStory();
 });
