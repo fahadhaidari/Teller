@@ -19,7 +19,6 @@ function update() {
     updateUI();
     storyWordIndex++;
   }
-
 }
 
 function updateUI() {
@@ -36,7 +35,6 @@ function clearUI() {
 }
 
 function addNewStory() {
-
   storyWordIndex = 0;
   if (!Story.areStoriesEnded(storyIndex + 1)) {
     storyIndex++;

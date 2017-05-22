@@ -17,12 +17,12 @@ html, body {
 #storyBoard {
   margin: 10px auto;
   font-size: 3rem;
-  font-size: 3vw;
+  font-size: 4vw;
   width: 70%;
   height: 90%;
   background: #EEEEEE;
   border: solid 1px #EEEEEE;
-  border-radius: 40px;
+  border-radius: 10px;
   color: 222222;
   overflow: auto;
   padding: 2%;
@@ -31,7 +31,7 @@ html, body {
 #pageIndex {
   margin: 10px auto;
   font-size: 1rem;
-  font-size: 1.2vw;
+  font-size: 2vw;
   text-align: center;
   font-weight: bold;
   width: 4%;

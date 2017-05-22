@@ -3,10 +3,11 @@ const Story = {
   story1  : "Hi there, this is the first story I want to talk about...",
   story2  : "Hi there, this is the second story I want to talk about...",
   story3  : "Hi there, this is the third story I want to talk about...",
+  story4  : "Hi there, this is the fourth story I want to talk about...",
   stories : [],
 
   createStories : function () {
-    this.stories = [this.story1, this.story2, this.story3];
+    this.stories = [this.story1, this.story2, this.story3, this.story4];
   },
 
   getCurrentWordFromStory : function (_storyIndex, _wordIndex) {
