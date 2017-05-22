@@ -1,33 +1,45 @@
-
 const UPDATE_DELAY = 100;
 var storyIndex = 0;
 var storyWordIndex = 0;
 var words = "";
 var storyBoard = undefined;
 
-window.onload = function () {
+window.onload = function() {
   console.log("Teller is loaded");
   storyBoard = Utility.getDOM("storyBoard");
-  Story.createStories();
+  Story.createStories(); // adding each story to the main story-list
   timer = setInterval(update, UPDATE_DELAY);
 }
 
-function update () {
-  if(!Story.areStoriesEnded(storyIndex)) {
+function update() {
+  if (!Story.isStoryEnded(storyIndex, storyWordIndex)) {
     updateUI();
-    storyWordIndex ++;
-    if(Story.isStoryEnded(storyIndex, storyWordIndex)) {
-      storyIndex ++;
-      storyWordIndex = 0;
-    }
-  } else {
-    // clearInterval(timer);
+    storyWordIndex++;
   }
+
 }
 
-function updateUI () {
+function updateUI() {
   words += Story.getCurrentWordFromStory(storyIndex, storyWordIndex);
   // storyBoard.innerHTML += Story.stories[storyIndex][storyWordIndex]; // this is deffintely faster
   // because it does access the data directly without calling a function
   Utility.HTML(storyBoard, words);
 }
+
+// remove everything from the storyBoard
+function clearUI() {
+  words = "";
+}
+
+$(document).click(function() {
+  clearUI();
+  storyWordIndex = 0;
+  if (!Story.areStoriesEnded(storyIndex + 1)) {
+    storyIndex++;
+  } else {
+    storyIndex = 0;
+  }
+  // or you can use the below code, but '%' needs extra performance
+  // storyIndex = (storyIndex + 1) % (Story.getNumberOfStories());
+
+});
